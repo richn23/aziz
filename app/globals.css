@@ -279,7 +279,7 @@ nav.scrolled .nav-links a {
 .legacy-bg {
   position: absolute;
   inset: 0;
-  background-image: url('/legacy-bg.png');
+  background-image: url('/legacy-bc.PNG');
   background-size: cover;
   background-position: center;
   opacity: 0.15;
@@ -355,7 +355,7 @@ nav.scrolled .nav-links a {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('/legacy-bg.png');
+  background-image: url('/legacy-bc.PNG');
   background-size: cover;
   opacity: 0.4;
 }

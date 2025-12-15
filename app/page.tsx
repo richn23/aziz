@@ -189,7 +189,7 @@ export default function Home() {
           style={{ scale: heroScale }}
         >
           <Image
-            src="/hero.png"
+            src="/hero.PNG"
             alt="Modern apartment building in Al Ain"
             fill
             priority
@@ -322,8 +322,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <BeforeAfterReveal 
-              beforeSrc="/before.png"
-              afterSrc="/after.png"
+              beforeSrc="/before.PNG"
+              afterSrc="/after.PNG"
             />
             <p className="ba-hint">Hover to reveal transformation</p>
           </motion.div>
@@ -346,17 +346,17 @@ export default function Home() {
         <div className="services-grid">
           {[
             {
-              image: '/service-villa.png',
+              image: '/service-villa.PNG',
               title: 'Villa Redevelopment',
               description: 'Complete transformation of traditional villas into modern, multi-unit residential properties. We handle everything from planning to final handover.'
             },
             {
-              image: '/service-apartment.png',
+              image: '/service-apartment.PNG',
               title: 'Apartment Conversion',
               description: 'Expert subdivision of large properties into high-quality apartment units, maximizing your property\'s rental potential and value.'
             },
             {
-              image: '/service-planning.png',
+              image: '/service-planning.PNG',
               title: 'Planning & Consultation',
               description: 'Professional assessment of your property\'s potential with detailed feasibility studies, architectural planning, and municipality approvals.'
             }
@@ -403,11 +403,11 @@ export default function Home() {
         <div className="gallery-carousel">
           {/* First set of images */}
           {[
-            '/gallery-entrance.png',
-            '/gallery-living1.png',
-            '/gallery-living2.png',
-            '/gallery-bedroom.png',
-            '/gallery-detail.png'
+            '/gallery-entrance.PNG',
+            '/gallery-living1.PNG',
+            '/gallery-living2.PNG',
+            '/gallery-bedroom.PNG',
+            '/gallery-detail.PNG'
           ].map((src, index) => (
             <div key={`first-${index}`} className="gallery-item">
               <Image
@@ -420,11 +420,11 @@ export default function Home() {
           ))}
           {/* Duplicate set for seamless loop */}
           {[
-            '/gallery-entrance.png',
-            '/gallery-living1.png',
-            '/gallery-living2.png',
-            '/gallery-bedroom.png',
-            '/gallery-detail.png'
+            '/gallery-entrance.PNG',
+            '/gallery-living1.PNG',
+            '/gallery-living2.PNG',
+            '/gallery-bedroom.PNG',
+            '/gallery-detail.PNG'
           ].map((src, index) => (
             <div key={`second-${index}`} className="gallery-item">
               <Image
