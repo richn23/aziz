@@ -41,6 +41,17 @@ const brickDrop = {
   visible: { opacity: 1, y: 0, rotate: 0 }
 };
 
+type BrickAnimation =
+  | typeof brickFromLeft
+  | typeof brickFromRight
+  | typeof brickFromBottom
+  | typeof brickDrop;
+
+type LegacyBrick =
+  | { type: 'empty'; animation: BrickAnimation }
+  | { type: 'word'; text: string; animation: BrickAnimation }
+  | { type: 'stat'; number: number; label: string; animation: BrickAnimation };
+
 // Counter component for stats
 function Counter({ target, duration = 2 }: { target: number; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -131,7 +142,7 @@ export default function Home() {
   };
 
   // Brick wall data with animation directions
-  const brickRows = [
+  const brickRows: LegacyBrick[][] = [
     [
       { type: 'empty', animation: brickFromLeft },
       { type: 'stat', number: 30, label: 'Years', animation: brickDrop },
