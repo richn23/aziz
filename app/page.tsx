@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 
-// Animation variants - MORE DRAMATIC
+// Animation variants
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
   visible: { opacity: 1, y: 0 }
@@ -38,16 +38,7 @@ const brickFromBottom = {
 
 const brickDrop = {
   hidden: { opacity: 0, y: -120, rotate: -10 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    rotate: 0,
-    transition: {
-      type: "spring",
-      bounce: 0.3,
-      duration: 0.8
-    }
-  }
+  visible: { opacity: 1, y: 0, rotate: 0 }
 };
 
 // Counter component for stats
@@ -297,7 +288,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Before/After Section - Hover Reveal */}
+      {/* Before/After Section - Single Showcase */}
       <section className="transformation" id="transformation">
         <motion.div 
           className="transformation-header"
@@ -312,24 +303,19 @@ export default function Home() {
         </motion.div>
 
         <div className="before-after-container">
-          {[1, 2, 3].map((_, index) => (
-            <motion.div 
-              key={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={scaleIn}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-            >
-              <BeforeAfterReveal 
-                beforeSrc="/before.png"
-                afterSrc="/after.png"
-              />
-              {index === 0 && (
-                <p className="ba-hint">Hover to reveal transformation</p>
-              )}
-            </motion.div>
-          ))}
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={scaleIn}
+            transition={{ duration: 0.8 }}
+          >
+            <BeforeAfterReveal 
+              beforeSrc="/before.png"
+              afterSrc="/after.png"
+            />
+            <p className="ba-hint">Hover to reveal transformation</p>
+          </motion.div>
         </div>
       </section>
 
